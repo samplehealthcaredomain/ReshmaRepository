@@ -51,6 +51,13 @@ node {
        sh 'echo deploymnet done'
    }
    */
+   stage ('Deploy to Tomcat'){
+       
+       sh 'echo deploying application into tomcat'
+       sh 'cp $WORKSPACE/target/*.war /C:/Users/Administrator/Downloads/apache/apache-tomcat-9.0.17/webapps/'
+       sh 'echo deploymnet done'
+   }
+   /*
    stage ('Email Notifcation'){
        
        mail bcc: '', body: '''Build done
@@ -58,5 +65,5 @@ node {
 Regards,
 Mithun Technologies''', cc: 'bhaskar0504@gmail.com', from: '', replyTo: '', subject: 'Deployment done', to: 'devopstrainingblr@gmail.com,satyaswarup.inbox@gmail.com'
    } 
-    
+    */
 }
